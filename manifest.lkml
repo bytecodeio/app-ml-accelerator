@@ -24,12 +24,12 @@ application: ml-accelerator {
     use_iframes: yes
     new_window: yes
     new_window_external_urls: ["https://en.wikipedia.org/wiki", "https://developers.google.com/machine-learning/glossary", "https://cloud.google.com/vertex-ai/docs/model-registry/introduction"]
-    scoped_user_attributes: [
-      "ml_accelerator_bigquery_connection_name",
-      "ml_accelerator_dataset",
-      "ml_accelerator_generate_text_model_nam",
-      "ml_accelerator_gcp_project",
-    ]
+    # scoped_user_attributes: [
+    #   "ml_accelerator_bigquery_connection_name",
+    #   "ml_accelerator_dataset",
+    #   "ml_accelerator_generate_text_model_nam",
+    #   "ml_accelerator_gcp_project",
+    # ]
   }
 }
 
@@ -39,11 +39,13 @@ constant: CONNECTION_NAME {
 }
 
 constant: GCP_PROJECT {
-  value: "{{_user_attributes['ml_accelerator_gcp_project']}}"
+#  value: "{{_user_attributes['ml_accelerator_gcp_project']}}"
+  value: "ml-accelerator-dbarr"
 }
 
 constant: BQML_MODEL_DATASET_NAME {
-  value: "{{_user_attributes['ml_accelerator_dataset']}}"
+ # value: "{{_user_attributes['ml_accelerator_dataset']}}"
+  value: "looker_bqml_bc"
 }
 
 constant: GENERATE_TEXT_MODEL_NAME {
