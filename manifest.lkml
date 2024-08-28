@@ -25,7 +25,7 @@ application: ml-accelerator {
     new_window: yes
     new_window_external_urls: ["https://en.wikipedia.org/wiki", "https://developers.google.com/machine-learning/glossary", "https://cloud.google.com/vertex-ai/docs/model-registry/introduction"]
     scoped_user_attributes: [
-      "bigquery_connection_name",
+      "ml_accelerator_bigquery_connection_name",
       "ml_accelerator_dataset",
       "ml_accelerator_generate_text_model_nam",
       "ml_accelerator_gcp_project",
@@ -35,7 +35,7 @@ application: ml-accelerator {
 
 constant: CONNECTION_NAME {
   value: "ml_accelerator"
-  export: override_required
+  export: override_optional
 }
 
 constant: GCP_PROJECT {
