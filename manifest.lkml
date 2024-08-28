@@ -1,7 +1,7 @@
-project_name: "marketplace_bqml_ext"
+project_name: "ml_accelerator_bytecode"
 
 application: ml-accelerator {
-  label: "Machine Learning Accelerator"
+  label: "Machine Learning Accelerator_bc"
   file: "bundle.js"
   sri_hash: "spnMLxVFVZ71aj3VUpreZGBwpLD9+lzINATVhn47QEAgD5WGV85ID3R9wFiSakLq"
   entitlements: {
@@ -26,28 +26,28 @@ application: ml-accelerator {
     new_window_external_urls: ["https://en.wikipedia.org/wiki", "https://developers.google.com/machine-learning/glossary", "https://cloud.google.com/vertex-ai/docs/model-registry/introduction"]
     scoped_user_attributes: [
       "bigquery_connection_name",
-      "bqml_model_dataset_name",
-      "generate_text_model_name",
-      "gcp_project",
+      "ml_accelerator_dataset",
+      "ml_accelerator_generate_text_model_nam",
+      "ml_accelerator_gcp_project",
     ]
   }
 }
 
 constant: CONNECTION_NAME {
-  value: "ml-accelerator"
+  value: "ml_accelerator"
   export: override_required
 }
 
 constant: GCP_PROJECT {
-  value: "{{_user_attributes['marketplace_bqml_ext_ml_accelerator_gcp_project']}}"
+  value: "{{_user_attributes['ml_accelerator_gcp_project']}}"
 }
 
 constant: BQML_MODEL_DATASET_NAME {
-  value: "{{_user_attributes['marketplace_bqml_ext_ml_accelerator_bqml_model_dataset_name']}}"
+  value: "{{_user_attributes['ml_accelerator_dataset']}}"
 }
 
 constant: GENERATE_TEXT_MODEL_NAME {
-  value: "{{_user_attributes['marketplace_bqml_ext_ml_accelerator_generate_text_model_name']}}"
+  value: "{{_user_attributes['ml_accelerator_generate_text_model_name']}}"
 }
 # First create an LLM model in the same dataset as specified in constant "BQML_MODEL_DATASET_NAME", then provide model name here
 # https://cloud.google.com/bigquery/docs/generate-text
